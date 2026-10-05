@@ -17,9 +17,8 @@ These projects are the **Java** assignments I delivered for the **Object-Oriente
 | `excel-reader/` | Apache POI demo: read `data.xlsx` and print the first sheet |
 | `hr-payroll/` | HR console app: employees, categories, overtime payroll report |
 | `pharmacy-inventory/` | Pharmacy login + medication registry with form-based markup |
+| `polymorphic-music/` | Inheritance + polymorphism demo with music genres and streams |
 | `java-basics/` | Six short Maven exercises (inventory, collections, tickets, …) |
-
-More projects from this course will be added as they are cleaned up and tested.
 
 ---
 
@@ -108,6 +107,22 @@ java -cp out com.josealrocmun.pharmacyinventoryapp.PharmacyInventoryApp
 Demo login: `josea` / `ramb3rt0`. Quick test: Paracetamol / Acetaminophen / Tylenol / `100` / `solid` / `no` → sales price `$109.00`.
 
 See `pharmacy-inventory/README.md` for details.
+
+
+## 🚀 Run — polymorphic-music
+
+No interactive input — prints three demo levels and exits:
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$JAVA_HOME/bin:$PATH"
+cd polymorphic-music/MusicInheritanceApp
+mkdir -p out
+javac -d out $(find src -name '*.java')
+java -cp out com.josealrocmun.musicinheritanceapp.MusicInheritanceApp
+```
+
+Expect playlist average popularity `1.75`. See `polymorphic-music/README.md` for the full sample output.
 
 ## 🚀 Run — java-basics (example)
 
