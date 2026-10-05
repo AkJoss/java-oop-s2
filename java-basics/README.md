@@ -10,7 +10,20 @@ Six short Maven console exercises from 2nd-semester OOP coursework.
 | `CollectionsDemo/` | List / set / map product demos |
 | `DictionarySystem/` | Dictionary lookup console |
 | `GradeAverageCalculator/` | Grade average calculator |
-| `MatrixStatsApp/` | Matrix statistics |
-| `TicketSalesApp/` | Ticket sales console |
+| `MatrixStatsApp/` | Square matrix even/odd stats (random fill) |
+| `TicketSalesApp/` | Ticket sales + passenger list ($10 each) |
 
-Each folder has its own `pom.xml`. Run with `javac`/`java` from that folder (see comments in each main class).
+Names are PascalCase Maven project folders under the kebab-case parent `java-basics/`.
+
+## Run (example)
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$JAVA_HOME/bin:$PATH"
+cd java-basics/TicketSalesApp
+mkdir -p out
+javac -d out $(find src -name '*.java')
+java -cp out com.josealrocmun.ticketsalesapp.TicketSalesApp
+```
+
+See `@author` / quick-test notes in each main class for expected output.

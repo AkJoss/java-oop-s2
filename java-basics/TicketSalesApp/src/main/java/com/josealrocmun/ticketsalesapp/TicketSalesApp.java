@@ -1,17 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.josealrocmun.ticketsalesapp;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 /**
+ * Console ticket sales demo (OOP coursework basics).
+ *
+ * Menu:
+ *   A Process a ticket sale ($10 each; buyer + optional passengers)
+ *   B Display passenger list and accumulated sales
+ *   S Exit
+ *
+ * Quick test:
+ *   A → Jose → 1 → Ana
+ *   Expect ticket qty 2, sale total $20.0
+ *   B → Jose, Ana; Total passengers 2; Total accumulated sales $20.0
+ *   S → End of Program v1.1
  *
  * @author José Alberto Rocha Munguía
  */
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
-
 public class TicketSalesApp {
 
     public static void main(String[] args) {
@@ -26,9 +34,10 @@ public class TicketSalesApp {
             System.out.print("Choose an option: ");
 
             char option = scanner.next().toUpperCase().charAt(0);
+            scanner.nextLine(); // consume rest of the menu line
 
             switch (option) {
-                case 'A' -> ticketManager.processSale();
+                case 'A' -> ticketManager.processSale(scanner);
                 case 'B' -> ticketManager.displaySalesData();
                 case 'S' -> {
                     System.out.println("------- End of Program v1.1 -----------");
@@ -40,23 +49,25 @@ public class TicketSalesApp {
     }
 }
 
+/**
+ * Tracks passengers and ticket totals for the session.
+ *
+ * @author José Alberto Rocha Munguía
+ */
 class TicketManager {
     private List<String> allPassengers = new ArrayList<>();
     private int totalTicketsSold = 0;
     private final double TICKET_PRICE = 10.0;
 
-    public void processSale() {
-        Scanner scanner = new Scanner(System.in);
-
+    public void processSale(Scanner scanner) {
         System.out.println("-----------------------------------------");
         System.out.print("Enter buyer's name: ");
         String buyerName = scanner.nextLine();
 
         System.out.print("Enter number of additional passengers: ");
         int additionalPassengersCount = scanner.nextInt();
-        scanner.nextLine(); // Consume newline
+        scanner.nextLine(); // consume leftover newline after the number
 
-        // Add buyer to the global list
         allPassengers.add(buyerName);
         String[] currentAdditionalPassengers = new String[additionalPassengersCount];
 
