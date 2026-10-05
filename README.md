@@ -15,6 +15,7 @@ These projects are the **Java** assignments I delivered for the **Object-Oriente
 | `coffee-machine/` | Coffee machine simulator (cups, coins, supplies) |
 | `arcade/` | Arcade shell: pick a minigame stub, register customer, daily report |
 | `excel-reader/` | Apache POI demo: read `data.xlsx` and print the first sheet |
+| `hr-payroll/` | HR console app: employees, categories, overtime payroll report |
 | `java-basics/` | Six short Maven exercises (inventory, collections, tickets, …) |
 
 More projects from this course will be added as they are cleaned up and tested.
@@ -74,6 +75,22 @@ mvn -q compile exec:java
 ```
 
 See `excel-reader/README.md` for details.
+
+
+## 🚀 Run — hr-payroll
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$JAVA_HOME/bin:$PATH"
+cd hr-payroll/HRManagementApp
+mkdir -p out
+javac -d out $(find src -name '*.java')
+java -cp out com.josealrocmun.hrmanagementapp.HumanResourcesMain
+```
+
+Quick test: `1` → name → phone → `15/03/1995` → `40` → `2` → `1` (Sales; net pay $4100).
+
+See `hr-payroll/README.md` for details.
 
 ## 🚀 Run — java-basics (example)
 
