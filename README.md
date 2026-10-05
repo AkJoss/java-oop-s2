@@ -14,6 +14,7 @@ These projects are the **Java** assignments I delivered for the **Object-Oriente
 |---|---|
 | `coffee-machine/` | Coffee machine simulator (cups, coins, supplies) |
 | `arcade/` | Arcade shell: pick a minigame stub, register customer, daily report |
+| `excel-reader/` | Apache POI demo: read `data.xlsx` and print the first sheet |
 | `java-basics/` | Six short Maven exercises (inventory, collections, tickets, …) |
 
 More projects from this course will be added as they are cleaned up and tested.
@@ -23,7 +24,8 @@ More projects from this course will be added as they are cleaned up and tested.
 ## 🛠 Requirements
 
 - **JDK 21+** (tested with JDK 26 on macOS)
-- Optional: Maven (projects include `pom.xml`)
+- **Maven** for `excel-reader/` and other POI/Maven projects (`brew install maven` on macOS)
+- Optional: Maven for the rest (projects include `pom.xml`)
 
 ```bash
 export JAVA_HOME=$(/usr/libexec/java_home)   # macOS
@@ -58,6 +60,20 @@ java -cp out com.josealrocmun.gamearcadeapp.GameArcadeApp
 ```
 
 Minigames are stubs (print a start line only). Set `ACTIVATIONS` in `GameArcadeApp.java` (1 for a quick test, 10 for the full loop).
+
+
+## 🚀 Run — excel-reader
+
+Needs **Maven** (Apache POI). Run from the project folder so `data.xlsx` is found:
+
+```bash
+export JAVA_HOME=$(/usr/libexec/java_home)
+export PATH="$JAVA_HOME/bin:/opt/homebrew/bin:$PATH"
+cd excel-reader/ExcelReader
+mvn -q compile exec:java
+```
+
+See `excel-reader/README.md` for details.
 
 ## 🚀 Run — java-basics (example)
 
