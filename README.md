@@ -13,6 +13,7 @@ These projects are the **Java** assignments I delivered for the **Object-Oriente
 | Folder | Project |
 |---|---|
 | `coffee-machine/` | Coffee machine simulator (cups, coins, supplies) |
+| `arcade/` | Arcade shell: pick a minigame stub, register customer, daily report |
 | `java-basics/` | Six short Maven exercises (inventory, collections, tickets, …) |
 
 More projects from this course will be added as they are cleaned up and tested.
@@ -46,6 +47,17 @@ Quick test: `1` → `1` → `11` (one small cup, pay $11, get change).
 See `coffee-machine/README.md` for details.
 
 ---
+
+## 🚀 Run — arcade
+
+```bash
+cd arcade/GameArcadeApp
+mkdir -p out
+javac -d out $(find src -name '*.java')
+java -cp out com.josealrocmun.gamearcadeapp.GameArcadeApp
+```
+
+Minigames are stubs (print a start line only). Set `ACTIVATIONS` in `GameArcadeApp.java` (1 for a quick test, 10 for the full loop).
 
 ## 🚀 Run — java-basics (example)
 
