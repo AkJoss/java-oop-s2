@@ -1,11 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.josealrocmun.boxinventorysystem;
+
 import java.util.Scanner;
 
 /**
+ * Console box store demo (OOP coursework basics).
+ *
+ * Menu loop:
+ *   1 Buy boxes at $5 each
+ *   2 Sell boxes at $3 each
+ *   3 Print report (operations, sales, purchases, cash)
+ *   4 Exit
+ *
+ * Note: each loop asks for username/password but does not validate them
+ * (original coursework behavior).
+ *
+ * Quick test:
+ *   any / any → 1 → 2
+ *   any / any → 2 → 4
+ *   any / any → 3
+ *   any / any → 4
+ * Expected after buy 2 + sell 4: purchases $10, sales $12, cash balance $2
  *
  * @author José Alberto Rocha Munguía
  */
@@ -20,7 +34,6 @@ public class BoxInventorySystem {
         int boxes;
         double price;
 
-        // Variables for record keeping
         int totalOperations = 0;
         int totalSales = 0;
         int totalPurchases = 0;
@@ -28,7 +41,6 @@ public class BoxInventorySystem {
         double purchaseExpenses = 0;
         double cashBalance = 0;
 
-        // Store Welcome
         do {
             System.out.println("Welcome to the Box Store");
             System.out.println("Username:");
@@ -36,7 +48,6 @@ public class BoxInventorySystem {
             System.out.println("Password:");
             password = sn.next();
 
-            // Menu Interface
             System.out.println("");
             System.out.println("1- Buy paper boxes");
             System.out.println("2- Sell paper boxes");
@@ -44,7 +55,6 @@ public class BoxInventorySystem {
             System.out.println("4- Exit");
             option = sn.nextInt();
 
-            // Store Cases
             switch (option) {
                 case 1 -> {
                     System.out.println("Buying paper boxes");
